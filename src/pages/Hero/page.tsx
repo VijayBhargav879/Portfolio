@@ -5,10 +5,9 @@ import { AnimatedShinyText } from "@/components/magicui/animated-shiny-text";
 import { SparklesText } from "@/components/magicui/sparkles-text";
 import { FlipWords } from "../../components/ui/flip-words";
 import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-with-collision";
-import { Button } from "../../components/ui/moving-border";
 import { ShootingStars } from "../../components/ui/shooting-stars";
 import config from "@/config/config";
-import { ArrowRightIcon } from "lucide-react";
+import { ArrowRightIcon, Download } from "lucide-react";
 
 export default function Hero() {
   const { theme } = useTheme();
@@ -17,9 +16,7 @@ export default function Hero() {
     <>
       <div
         className={`hero min-h-screen pt-16 relative ${
-          theme === "dark"
-            ? "bg-[#090f1c] text-white"
-            : "bg-white text-gray-900"
+          theme === "dark" ? "bg-[#090f1c] text-white" : "bg-white text-gray-900"
         }`}
       >
         {/* Spotlight */}
@@ -27,19 +24,16 @@ export default function Hero() {
           <div className="absolute left-[10%] top-[30%] h-[300px] w-[300px] bg-gradient-to-r from-purple-900 via-indigo-800 to-cyan-900 opacity-30 blur-[100px]" />
         </div>
 
-        {/* Grid Background */}
+        {/* Background patterns */}
         <div className="absolute inset-0 bg-grid-slate-200/[0.04] bg-[size:75px_75px] [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
-
-        {/* Dot Pattern */}
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)] opacity-25" />
         </div>
 
-        <div className="container mx-auto px-2 py-12 relative">
+        <div className="container mx-auto px-2 py-12 relative z-10">
           <div className="flex flex-col md:flex-row justify-between items-center min-h-[80vh]">
             {/* Left Section */}
             <div className="md:w-1/2 w-full">
-              {/* Welcome Badge */}
               <div className="inline-block mb-3">
                 <div className="rounded-full py-1 flex items-center">
                   <div className="z-10 flex items-center justify-center">
@@ -72,8 +66,7 @@ export default function Hero() {
                   text={config.information.helloText}
                   sparklesCount={10}
                 />
-                I'm{" "}
-                <span className="text-teal-400">{config.information.name}</span>
+                I'm <span className="text-teal-400">{config.information.name}</span>
               </h1>
 
               <div className="mt-8 inline-block">
@@ -98,38 +91,47 @@ export default function Hero() {
 
               <p className="mt-6 text-2xl">{config.information.title}</p>
 
-              <div className="mt-8 flex space-x-4">
+              {/* ✅ BUTTONS */}
+              <div className="flex gap-4 mt-8 relative z-10 pointer-events-auto">
+                {/* Get Resume */}
                 <a
-                  href="#"
-                  className="bg-transparent text-blue-400  hover:bg-opacity-30 transition duration-300 cursor-pointer"
-                >
-                  <Button className="cursor-pointer">Learn More</Button>
-                </a>
-                <a
-                  href="#"
-                  className="bg-transparent border border-gray-700 text-gray-400 hover:border-gray-600 hover:text-gray-300 py-2 px-6 transition duration-300 flex items-center justify-center rounded-full cursor-pointer"
+                  href="public/Vijay_resume.pdf"
+                  download
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center rounded-full border border-blue-500 px-6 py-3 text-blue-500 hover:bg-blue-500 hover:text-white transition duration-300"
                 >
                   Get Resume
+                  <Download className="ml-2 h-5 w-5" />
+                </a>
+
+                {/* Learn More */}
+                <a
+                  href="#about"
+                  className="inline-flex items-center rounded-full bg-blue-500 px-6 py-3 text-white hover:bg-blue-600 transition duration-300"
+                >
+                  Learn More
+                  <ArrowRightIcon className="ml-2 h-5 w-5" />
                 </a>
               </div>
             </div>
 
-            {/* Right Section - Code Window */}
-            <div className="md:w-1/2 w-full rounded-lg overflow-hidden ">
-              <div className="code-window bg-gray-900 rounded-lg  shadow-lg relative before:absolute before:w-[200%] before:h-[200%] before:top-[-50%] before:left-[-50%] before:animate-[spin_4s_linear_infinite] before:bg-[conic-gradient(from_0deg,transparent_0_45deg,#3b82f6_45deg_135deg,transparent_135deg_180deg,transparent_180deg_225deg,#3b82f6_225deg_315deg,transparent_315deg)] before:opacity-30">
-                {/* Window Header */}
+            {/* Right Section - Code */}
+            <div className="md:w-1/2 w-full rounded-lg overflow-hidden mt-10 md:mt-0">
+              <div className="code-window bg-gray-900 rounded-lg shadow-lg relative before:absolute before:w-[200%] before:h-[200%] before:top-[-50%] before:left-[-50%] before:animate-[spin_4s_linear_infinite] before:bg-[conic-gradient(from_0deg,transparent_0_45deg,#3b82f6_45deg_135deg,transparent_135deg_180deg,transparent_180deg_225deg,#3b82f6_225deg_315deg,transparent_315deg)] before:opacity-30">
+                {/* Header */}
                 <div className="bg-gray-800 px-4 py-2 flex items-center relative z-10">
                   <div className="flex space-x-2">
-                    <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-                    <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                    <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                    <div className="w-3 h-3 bg-red-500 rounded-full" />
+                    <div className="w-3 h-3 bg-yellow-500 rounded-full" />
+                    <div className="w-3 h-3 bg-green-500 rounded-full" />
                   </div>
                   <div className="ml-4 text-sm text-gray-400">developer.js</div>
                 </div>
 
-                {/* Code Content */}
+                {/* Code */}
                 <div className="font-mono text-3xl relative z-20">
-                  <div className="relative z-20 ">
+                  <div className="relative z-20">
                     <BackgroundBeamsWithCollision>
                       <SyntaxHighlighter
                         language="javascript"
@@ -154,6 +156,7 @@ export default function Hero() {
           </div>
         </div>
       </div>
+
       <ShootingStars />
     </>
   );

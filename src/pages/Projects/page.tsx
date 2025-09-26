@@ -1,7 +1,6 @@
-import { Github, ExternalLink } from "lucide-react";
+import { Github } from "lucide-react";
 import olova from "@/assets/projects/olova-B0FjVVEL.png";
 import portfolio from "@/assets/projects/Annotation 2025-03-20 155334.png";
-import codekori from "@/assets/projects/codekori.png";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useTheme } from "@/provider/page";
 
@@ -19,13 +18,12 @@ const ProjectShowcase = () => {
 
   const projects = [
     {
-      title: "Olova! A Lightweight JavaScript Library",
+      title: "InfoPilot - Enterprise-Grade AI Chatbot",
       description:
-        "Olova.js is a lightweight JavaScript library for building modern, reactive, and dynamic web applications. It features a simple, component-based architecture, enabling developers to create reusable and interactive UI elements with minimal code and overhead.",
-      tags: ["JavaScript", "Reactive", "Web Development"],
+        "InfoPilot is an enterprise-grade, all-purpose AI chatbot engineered with Rasa Pro, ChatGPT integration, and a React-based frontend. It is designed to deliver intelligent, context-aware conversations across multiple domains while ensuring scalability, security, and reliability. The solution is containerized with Docker and optimized for cloud deployment, making it suitable for real-world business applications.",
+      tags: ["AI Assistant", "Rasa Pro", "ChatGPT", "React", "Docker", "Cloud Deployment", "Enterprise"],
       links: {
-        github: "https://github.com/olovajs/olova",
-        demo: "https://olova.js.org/",
+        github: "https://github.com/VijayBhargav879/InfoPilot.git",
       },
       image: olova,
       featured: true,
@@ -36,24 +34,7 @@ const ProjectShowcase = () => {
       description:
         "This portfolio is a sleek and modern showcase of my skills and projects. It's built with React and Tailwind CSS, providing a clean and professional look that reflects my professional brand.",
       tags: ["React", "Tailwind CSS", "Portfolio", "Typescript"],
-      links: {
-        github: "https://github.com/seraprogrammer/portfolio",
-        demo: "https://codervai.vercel.app/",
-      },
       image: portfolio,
-      featured: true,
-    },
-    {
-      title:
-        "CodeKori is an open-source online code editor with built-in AI, completely free to use",
-      description:
-        "This portfolio is a sleek and modern showcase of my skills and projects. It's built with React and Tailwind CSS, providing a clean and professional look that reflects my professional brand.",
-      tags: ["React", "Tailwind CSS", "Portfolio", "Typescript"],
-      links: {
-        github: "https://github.com/seraprogrammer/CodeKori",
-        demo: "https://codekori.js.org/",
-      },
-      image: codekori,
       featured: true,
     },
   ];
@@ -106,22 +87,16 @@ const ProjectShowcase = () => {
                     </CardTitle>
                   </div>
                   <div className="flex gap-4">
-                    <a
-                      href={project.links.github}
-                      className="text-slate-400 hover:text-emerald-400 transition-all duration-300 transform hover:scale-125"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <Github size={22} />
-                    </a>
-                    <a
-                      href={project.links.demo}
-                      className="text-slate-400 hover:text-emerald-400 transition-all duration-300 transform hover:scale-125"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <ExternalLink size={22} />
-                    </a>
+                    {project.links?.github && (
+                      <a
+                        href={project.links.github}
+                        className="text-slate-400 hover:text-emerald-400 transition-all duration-300 transform hover:scale-125"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Github size={22} />
+                      </a>
+                    )}
                   </div>
                 </div>
               </CardHeader>

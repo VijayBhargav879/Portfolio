@@ -57,27 +57,26 @@ export default function About() {
                   theme === "dark" ? "text-gray-300" : "text-gray-600"
                 }`}
               >
-                Hello! I'm Nazmul Hossain, a passionate JavaScript developer
-                specializing in creating innovative web solutions and
-                user-friendly interfaces.{" "}
+                Hello! I’m M. Vijay Bhargav, an aspiring DevOps and Cloud Engineer with a passion for building 
+                smart, scalable, and sustainable tech solutions.
+                With a strong foundation in Python, Linux, and GitHub Actions, 
+                I enjoy crafting automation pipelines that bring speed, reliability, and efficiency to software development.{" "}
                 <span
                   className={`font-bold ${
                     theme === "dark" ? "text-white" : "text-gray-900"
                   }`}
                 >
-                  As the creator of the OlovaJS UI Framework
+                  
                 </span>
-                , I'm dedicated to simplifying development workflows.
+                , 
               </p>
               <p
                 className={`${
                   theme === "dark" ? "text-gray-300" : "text-gray-600"
                 }`}
               >
-                My focus is on making web development faster, easier, and
-                accessible to all developers. Currently, I'm expanding into
-                backend development to grow as a full-stack developer and create
-                seamless, robust web applications.
+                My focus lies in modern DevOps workflows, cloud platforms like AWS and Azure, and infrastructure as code using tools like Terraform and Docker. 
+                I’m also exploring AI integrations, having built GPT-powered chatbots with Rasa and React to solve real-world problems and raise awareness in areas like renewable energy.
               </p>
 
               <div className="pt-6">
@@ -91,11 +90,7 @@ export default function About() {
                       theme === "dark" ? "text-gray-300" : "text-gray-600"
                     }
                   >
-                    I'm a lifelong learner and innovator, driven by a desire to
-                    contribute to the developer community with new ideas and
-                    tools that deliver real value. As the creator of OlovaJS,
-                    I'm pushing the boundaries of JavaScript frameworks to
-                    empower developers worldwide.
+                    I’m a driven learner and problem-solver, constantly experimenting with new technologies to improve development processes. Whether it’s deploying CI/CD pipelines or integrating machine learning into apps, I aim to create tools that deliver impact — and empower developers and communities alike.
                   </p>
 
                   <div className="mt-6 space-y-3">
@@ -104,17 +99,12 @@ export default function About() {
                         theme === "dark" ? "text-white" : "text-gray-900"
                       }`}
                     >
-                      Nazmul Hossain, Creator of 
+                      M. Vijay Bhargav, 
                     </cite>
                     <div className="flex items-center gap-2">
                       <img
-                        className={`h-5 w-fit ${theme === "dark" ? "" : ""}`}
-                        src={OlovaLogo}
-                        alt="Olova Logo"
-                        height="20"
-                        width="auto"
+                        
                       />
-                      <span>OlovaJS</span>
                     </div>
                   </div>
                 </blockquote>

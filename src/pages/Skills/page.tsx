@@ -2,40 +2,40 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { useTheme } from "@/provider/page";
 import { Marquee } from "@/components/magicui/marquee";
-import {
-  Code2,
-  Paintbrush,
-  Database,
-  Layout,
-  Cpu,
-  Cloud,
-  Sparkles,
-  Layers,
-  GitBranch,
-  Server,
-  Globe,
-  FileCode,
-  Figma,
-  Github,
-  CloudCog,
-} from "lucide-react";
 
-import { FaDocker, FaLinux } from "react-icons/fa";
-import { RiNextjsLine } from "react-icons/ri";
+import { Cpu, Cloud, Github, Terminal, Code, Server, Network, Layout, Database } from "lucide-react";
 import {
-  SiTypescript,
-  SiTailwindcss,
-  SiPostgresql,
-  SiMongodb,
-  SiGraphql,
-  SiJest,
+  FaAws,
+  FaMicrosoft,
+  FaGoogle,
+  FaDocker,
+  FaGitlab,
+  FaLinux,
+  FaPython,
+  FaReact,
+  FaNodeJs,
+  FaJs,
+  FaHtml5,
+  FaCss3Alt,
+} from "react-icons/fa";
+import {
+  SiJenkins,
   SiWebpack,
-  SiRedux,
   SiFirebase,
   SiVercel,
   SiVite,
+  SiGrafana,
+  SiTerraform,
+  SiNginx,
+  SiTypescript,
+  SiTailwindcss,
+  SiNextdotjs,
+  SiMongodb,
+  SiPostgresql,
+  SiExpress,
+  SiGraphql,
+  SiRedis,
 } from "react-icons/si";
-import { BsFileEarmarkCode } from "react-icons/bs";
 import { TbBrandVscode } from "react-icons/tb";
 
 interface Skill {
@@ -119,35 +119,53 @@ const SkillsSection = () => {
   const isDark = theme === "dark";
 
   const skillCategories: SkillCategory[] = [
+    // 🔥 MOVED TO FIRST POSITION
     {
-      icon: Code2,
+      icon: Cloud,
+      title: "Cloud & DevOps",
+      color: "text-orange-400",
+      skills: [
+        { name: "AWS", icon: <FaAws className="w-5 h-5 text-[#FF9900]" /> },
+        { name: "Microsoft Azure", icon: <FaMicrosoft className="w-5 h-5 text-[#0078D4]" /> },
+        { name: "GCP", icon: <FaGoogle className="w-5 h-5 text-[#4285F4]" /> },
+        { name: "Docker", icon: <FaDocker className="w-5 h-5 text-[#2496ED]" /> },
+        { name: "Networking", icon: <Network className="w-5 h-5 text-[#2563EB]" /> },
+        { name: "Jenkins", icon: <SiJenkins className="w-5 h-5 text-[#D33833]" /> },
+        { name: "Terraform", icon: <SiTerraform className="w-5 h-5 text-[#623CE4]" /> },
+        { name: "Nginx", icon: <SiNginx className="w-5 h-5 text-[#009639]" /> },
+        { name: "GitHub Actions", icon: <Github className="w-5 h-5 text-[#181717]" /> },
+        { name: "GitLab CI", icon: <FaGitlab className="w-5 h-5 text-[#FC6D26]" /> },
+      ],
+    },
+    // 🔥 MOVED TO SECOND POSITION  
+    {
+      icon: Cpu,
+      title: "Tools & Technologies",
+      color: "text-pink-400",
+      skills: [
+        { name: "VS Code", icon: <TbBrandVscode className="w-5 h-5 text-[#007ACC]" /> },
+        { name: "Git", icon: <Github className="w-5 h-5 text-[#F05032]" /> },
+        { name: "Linux", icon: <FaLinux className="w-5 h-5 text-[#FCC624]" /> },
+        { name: "Webpack", icon: <SiWebpack className="w-5 h-5 text-[#8DD6F9]" /> },
+        { name: "Firebase", icon: <SiFirebase className="w-5 h-5 text-[#FFCA28]" /> },
+        { name: "Vercel", icon: <SiVercel className="w-5 h-5 text-white" /> },
+        { name: "Grafana", icon: <SiGrafana className="w-5 h-5 text-[#F46800]" /> },
+      ],
+    },
+    // Frontend and Backend moved after Cloud/DevOps and Tools
+    {
+      icon: Layout,
       title: "Frontend Development",
       color: "text-blue-400",
       skills: [
-        {
-          name: "React",
-          icon: <FileCode className="w-4 h-4 text-[#61DAFB]" />,
-        },
-        {
-          name: "Next.js",
-          icon: <RiNextjsLine className="w-4 h-4 text-white" />,
-        },
-        {
-          name: "TypeScript",
-          icon: <SiTypescript className="w-4 h-4 text-[#3178C6]" />,
-        },
-        {
-          name: "Tailwind CSS",
-          icon: <SiTailwindcss className="w-4 h-4 text-[#38B2AC]" />,
-        },
-        {
-          name: "HTML5",
-          icon: <BsFileEarmarkCode className="w-4 h-4 text-[#E34F26]" />,
-        },
-        {
-          name: "CSS3",
-          icon: <BsFileEarmarkCode className="w-4 h-4 text-[#1572B6]" />,
-        },
+        { name: "React", icon: <FaReact className="w-5 h-5 text-[#61DAFB]" /> },
+        { name: "Next.js", icon: <SiNextdotjs className="w-5 h-5 text-white" /> },
+        { name: "TypeScript", icon: <SiTypescript className="w-5 h-5 text-[#3178C6]" /> },
+        { name: "JavaScript", icon: <FaJs className="w-5 h-5 text-[#F7DF1E]" /> },
+        { name: "HTML5", icon: <FaHtml5 className="w-5 h-5 text-[#E34F26]" /> },
+        { name: "CSS3", icon: <FaCss3Alt className="w-5 h-5 text-[#1572B6]" /> },
+        { name: "Tailwind CSS", icon: <SiTailwindcss className="w-5 h-5 text-[#38B2AC]" /> },
+        { name: "Vite", icon: <SiVite className="w-5 h-5 text-[#646CFF]" /> },
       ],
     },
     {
@@ -155,118 +173,14 @@ const SkillsSection = () => {
       title: "Backend Development",
       color: "text-green-400",
       skills: [
-        {
-          name: "Node.js",
-          icon: <Server className="w-4 h-4 text-[#339933]" />,
-        },
-        {
-          name: "Python",
-          icon: <FileCode className="w-4 h-4 text-[#3776AB]" />,
-        },
-        {
-          name: "PostgreSQL",
-          icon: <SiPostgresql className="w-4 h-4 text-[#336791]" />,
-        },
-        {
-          name: "MongoDB",
-          icon: <SiMongodb className="w-4 h-4 text-[#47A248]" />,
-        },
-        {
-          name: "REST APIs",
-          icon: <Server className="w-4 h-4 text-[#FF6C37]" />,
-        },
-        {
-          name: "GraphQL",
-          icon: <SiGraphql className="w-4 h-4 text-[#E10098]" />,
-        },
-      ],
-    },
-    {
-      icon: Layout,
-      title: "UI/UX Design",
-      color: "text-purple-400",
-      skills: [
-        { name: "Figma", icon: <Figma className="w-4 h-4 text-[#F24E1E]" /> },
-        {
-          name: "Responsive Design",
-          icon: <Layout className="w-4 h-4 text-[#38B2AC]" />,
-        },
-        {
-          name: "Wireframing",
-          icon: <Layers className="w-4 h-4 text-[#9CA3AF]" />,
-        },
-        {
-          name: "Prototyping",
-          icon: <Sparkles className="w-4 h-4 text-[#F59E0B]" />,
-        },
-      ],
-    },
-    {
-      icon: Cloud,
-      title: "Cloud & DevOps",
-      color: "text-orange-400",
-      skills: [
-        { name: "AWS", icon: <CloudCog className="w-4 h-4 text-[#FF9900]" /> },
-        {
-          name: "Docker",
-          icon: <FaDocker className="w-4 h-4 text-[#2496ED]" />,
-        },
-        {
-          name: "CI/CD",
-          icon: <GitBranch className="w-4 h-4 text-[#2088FF]" />,
-        },
-        {
-          name: "Kubernetes",
-          icon: <Globe className="w-4 h-4 text-[#326CE5]" />,
-        },
-        { name: "Git", icon: <Github className="w-4 h-4 text-[#F05032]" /> },
-        { name: "Linux", icon: <FaLinux className="w-4 h-4 text-[#FCC624]" /> },
-      ],
-    },
-    {
-      icon: Cpu,
-      title: "Tools & Technologies",
-      color: "text-pink-400",
-      skills: [
-        {
-          name: "VS Code",
-          icon: <TbBrandVscode className="w-4 h-4 text-[#007ACC]" />,
-        },
-        { name: "Jest", icon: <SiJest className="w-4 h-4 text-[#C21325]" /> },
-        {
-          name: "Webpack",
-          icon: <SiWebpack className="w-4 h-4 text-[#8DD6F9]" />,
-        },
-        { name: "Redux", icon: <SiRedux className="w-4 h-4 text-[#764ABC]" /> },
-        {
-          name: "Firebase",
-          icon: <SiFirebase className="w-4 h-4 text-[#FFCA28]" />,
-        },
-        { name: "Vercel", icon: <SiVercel className="w-4 h-4 text-white" /> },
-        { name: "Vite", icon: <SiVite className="w-4 h-4 text-[#646CFF]" /> },
-      ],
-    },
-    {
-      icon: Paintbrush,
-      title: "Creative Skills",
-      color: "text-yellow-400",
-      skills: [
-        {
-          name: "UI Animation",
-          icon: <Sparkles className="w-4 h-4 text-[#FF4081]" />,
-        },
-        {
-          name: "SVG Animation",
-          icon: <Sparkles className="w-4 h-4 text-[#00C853]" />,
-        },
-        {
-          name: "3D Modeling",
-          icon: <Layers className="w-4 h-4 text-[#7C4DFF]" />,
-        },
-        {
-          name: "Motion Graphics",
-          icon: <Sparkles className="w-4 h-4 text-[#FF6D00]" />,
-        },
+        { name: "Node.js", icon: <FaNodeJs className="w-5 h-5 text-[#339933]" /> },
+        { name: "Python", icon: <FaPython className="w-5 h-5 text-[#3776AB]" /> },
+        { name: "Express.js", icon: <SiExpress className="w-5 h-5 text-white" /> },
+        { name: "MongoDB", icon: <SiMongodb className="w-5 h-5 text-[#47A248]" /> },
+        { name: "PostgreSQL", icon: <SiPostgresql className="w-5 h-5 text-[#336791]" /> },
+        { name: "GraphQL", icon: <SiGraphql className="w-5 h-5 text-[#E10098]" /> },
+        { name: "Redis", icon: <SiRedis className="w-5 h-5 text-[#DC382D]" /> },
+        { name: "REST APIs", icon: <Server className="w-5 h-5 text-[#FF6C37]" /> },
       ],
     },
   ];
@@ -314,6 +228,7 @@ const SkillsSection = () => {
         </div>
       </div>
 
+      {/* MARQUEE ANIMATED TECH ICONS CAROUSEL */}
       <section className="relative w-full overflow-hidden py-8">
         <div
           className={`w-full ${
@@ -337,123 +252,53 @@ const SkillsSection = () => {
               repeat={3}
             >
               <div className="flex items-center gap-8 px-4">
-                <div
-                  className={`p-4 rounded-lg ${
-                    isDark ? "bg-gray-800/50" : "bg-white/80"
-                  } backdrop-blur-sm transform hover:scale-110 transition-transform duration-300 shadow-lg hover:shadow-blue-500/20`}
-                >
-                  <FileCode className="w-8 h-8 text-[#61DAFB]" />
+                {/* Cloud & DevOps Icons First */}
+                <div className={`p-4 rounded-lg ${isDark ? "bg-gray-800/50" : "bg-white/80"} backdrop-blur-sm transform hover:scale-110 transition-transform duration-300 shadow-lg hover:shadow-blue-500/20`}>
+                  <FaAws className="w-8 h-8 text-[#FF9900]" />
                 </div>
-                <div
-                  className={`p-4 rounded-lg ${
-                    isDark ? "bg-gray-800/50" : "bg-white/80"
-                  } backdrop-blur-sm transform hover:scale-110 transition-transform duration-300 shadow-lg hover:shadow-blue-500/20`}
-                >
-                  <RiNextjsLine className="w-8 h-8 text-white" />
-                </div>
-                <div
-                  className={`p-4 rounded-lg ${
-                    isDark ? "bg-gray-800/50" : "bg-white/80"
-                  } backdrop-blur-sm transform hover:scale-110 transition-transform duration-300 shadow-lg hover:shadow-blue-500/20`}
-                >
-                  <SiTypescript className="w-8 h-8 text-[#3178C6]" />
-                </div>
-                <div
-                  className={`p-4 rounded-lg ${
-                    isDark ? "bg-gray-800/50" : "bg-white/80"
-                  } backdrop-blur-sm transform hover:scale-110 transition-transform duration-300 shadow-lg hover:shadow-blue-500/20`}
-                >
-                  <SiTailwindcss className="w-8 h-8 text-[#38B2AC]" />
-                </div>
-                <div
-                  className={`p-4 rounded-lg ${
-                    isDark ? "bg-gray-800/50" : "bg-white/80"
-                  } backdrop-blur-sm transform hover:scale-110 transition-transform duration-300 shadow-lg hover:shadow-blue-500/20`}
-                >
-                  <Server className="w-8 h-8 text-[#339933]" />
-                </div>
-                <div
-                  className={`p-4 rounded-lg ${
-                    isDark ? "bg-gray-800/50" : "bg-white/80"
-                  } backdrop-blur-sm transform hover:scale-110 transition-transform duration-300 shadow-lg hover:shadow-blue-500/20`}
-                >
-                  <SiPostgresql className="w-8 h-8 text-[#336791]" />
-                </div>
-                <div
-                  className={`p-4 rounded-lg ${
-                    isDark ? "bg-gray-800/50" : "bg-white/80"
-                  } backdrop-blur-sm transform hover:scale-110 transition-transform duration-300 shadow-lg hover:shadow-blue-500/20`}
-                >
-                  <SiMongodb className="w-8 h-8 text-[#47A248]" />
-                </div>
-                <div
-                  className={`p-4 rounded-lg ${
-                    isDark ? "bg-gray-800/50" : "bg-white/80"
-                  } backdrop-blur-sm transform hover:scale-110 transition-transform duration-300 shadow-lg hover:shadow-blue-500/20`}
-                >
-                  <SiGraphql className="w-8 h-8 text-[#E10098]" />
-                </div>
-                <div
-                  className={`p-4 rounded-lg ${
-                    isDark ? "bg-gray-800/50" : "bg-white/80"
-                  } backdrop-blur-sm transform hover:scale-110 transition-transform duration-300 shadow-lg hover:shadow-blue-500/20`}
-                >
-                  <Figma className="w-8 h-8 text-[#F24E1E]" />
-                </div>
-                <div
-                  className={`p-4 rounded-lg ${
-                    isDark ? "bg-gray-800/50" : "bg-white/80"
-                  } backdrop-blur-sm transform hover:scale-110 transition-transform duration-300 shadow-lg hover:shadow-blue-500/20`}
-                >
-                  <Layout className="w-8 h-8 text-[#38B2AC]" />
-                </div>
-                <div
-                  className={`p-4 rounded-lg ${
-                    isDark ? "bg-gray-800/50" : "bg-white/80"
-                  } backdrop-blur-sm transform hover:scale-110 transition-transform duration-300 shadow-lg hover:shadow-blue-500/20`}
-                >
-                  <CloudCog className="w-8 h-8 text-[#FF9900]" />
-                </div>
-                <div
-                  className={`p-4 rounded-lg ${
-                    isDark ? "bg-gray-800/50" : "bg-white/80"
-                  } backdrop-blur-sm transform hover:scale-110 transition-transform duration-300 shadow-lg hover:shadow-blue-500/20`}
-                >
+                <div className={`p-4 rounded-lg ${isDark ? "bg-gray-800/50" : "bg-white/80"} backdrop-blur-sm transform hover:scale-110 transition-transform duration-300 shadow-lg hover:shadow-blue-500/20`}>
                   <FaDocker className="w-8 h-8 text-[#2496ED]" />
                 </div>
-                <div
-                  className={`p-4 rounded-lg ${
-                    isDark ? "bg-gray-800/50" : "bg-white/80"
-                  } backdrop-blur-sm transform hover:scale-110 transition-transform duration-300 shadow-lg hover:shadow-blue-500/20`}
-                >
+                <div className={`p-4 rounded-lg ${isDark ? "bg-gray-800/50" : "bg-white/80"} backdrop-blur-sm transform hover:scale-110 transition-transform duration-300 shadow-lg hover:shadow-blue-500/20`}>
+                  <SiJenkins className="w-8 h-8 text-[#D33833]" />
+                </div>
+                <div className={`p-4 rounded-lg ${isDark ? "bg-gray-800/50" : "bg-white/80"} backdrop-blur-sm transform hover:scale-110 transition-transform duration-300 shadow-lg hover:shadow-blue-500/20`}>
                   <TbBrandVscode className="w-8 h-8 text-[#007ACC]" />
                 </div>
-                <div
-                  className={`p-4 rounded-lg ${
-                    isDark ? "bg-gray-800/50" : "bg-white/80"
-                  } backdrop-blur-sm transform hover:scale-110 transition-transform duration-300 shadow-lg hover:shadow-blue-500/20`}
-                >
-                  <SiRedux className="w-8 h-8 text-[#764ABC]" />
+                
+                {/* Frontend Icons */}
+                <div className={`p-4 rounded-lg ${isDark ? "bg-gray-800/50" : "bg-white/80"} backdrop-blur-sm transform hover:scale-110 transition-transform duration-300 shadow-lg hover:shadow-blue-500/20`}>
+                  <FaReact className="w-8 h-8 text-[#61DAFB]" />
                 </div>
-                <div
-                  className={`p-4 rounded-lg ${
-                    isDark ? "bg-gray-800/50" : "bg-white/80"
-                  } backdrop-blur-sm transform hover:scale-110 transition-transform duration-300 shadow-lg hover:shadow-blue-500/20`}
-                >
-                  <SiFirebase className="w-8 h-8 text-[#FFCA28]" />
+                <div className={`p-4 rounded-lg ${isDark ? "bg-gray-800/50" : "bg-white/80"} backdrop-blur-sm transform hover:scale-110 transition-transform duration-300 shadow-lg hover:shadow-blue-500/20`}>
+                  <SiNextdotjs className="w-8 h-8 text-white" />
                 </div>
-                <div
-                  className={`p-4 rounded-lg ${
-                    isDark ? "bg-gray-800/50" : "bg-white/80"
-                  } backdrop-blur-sm transform hover:scale-110 transition-transform duration-300 shadow-lg hover:shadow-blue-500/20`}
-                >
-                  <SiVite className="w-8 h-8 text-[#646CFF]" />
+                <div className={`p-4 rounded-lg ${isDark ? "bg-gray-800/50" : "bg-white/80"} backdrop-blur-sm transform hover:scale-110 transition-transform duration-300 shadow-lg hover:shadow-blue-500/20`}>
+                  <SiTypescript className="w-8 h-8 text-[#3178C6]" />
+                </div>
+                <div className={`p-4 rounded-lg ${isDark ? "bg-gray-800/50" : "bg-white/80"} backdrop-blur-sm transform hover:scale-110 transition-transform duration-300 shadow-lg hover:shadow-blue-500/20`}>
+                  <SiTailwindcss className="w-8 h-8 text-[#38B2AC]" />
+                </div>
+                
+                {/* Backend Icons */}
+                <div className={`p-4 rounded-lg ${isDark ? "bg-gray-800/50" : "bg-white/80"} backdrop-blur-sm transform hover:scale-110 transition-transform duration-300 shadow-lg hover:shadow-blue-500/20`}>
+                  <FaNodeJs className="w-8 h-8 text-[#339933]" />
+                </div>
+                <div className={`p-4 rounded-lg ${isDark ? "bg-gray-800/50" : "bg-white/80"} backdrop-blur-sm transform hover:scale-110 transition-transform duration-300 shadow-lg hover:shadow-blue-500/20`}>
+                  <FaPython className="w-8 h-8 text-[#3776AB]" />
+                </div>
+                <div className={`p-4 rounded-lg ${isDark ? "bg-gray-800/50" : "bg-white/80"} backdrop-blur-sm transform hover:scale-110 transition-transform duration-300 shadow-lg hover:shadow-blue-500/20`}>
+                  <SiMongodb className="w-8 h-8 text-[#47A248]" />
+                </div>
+                <div className={`p-4 rounded-lg ${isDark ? "bg-gray-800/50" : "bg-white/80"} backdrop-blur-sm transform hover:scale-110 transition-transform duration-300 shadow-lg hover:shadow-blue-500/20`}>
+                  <SiPostgresql className="w-8 h-8 text-[#336791]" />
                 </div>
               </div>
             </Marquee>
           </div>
         </div>
 
+        {/* Gradient overlays for fade effect */}
         <div
           className={`pointer-events-none absolute inset-y-0 left-0 w-1/3 ${
             isDark
@@ -469,8 +314,9 @@ const SkillsSection = () => {
           } z-10`}
         ></div>
       </section>
+
       <section className="container mx-auto px-4 py-11">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
           {skillCategories.map((category, index) => (
             <SkillCard
               key={index}

@@ -1,6 +1,4 @@
 
-
-markdown
 # Vijay Bhargav's Portfolio 👨‍💻✨
 
 ![Build Status](https://img.shields.io/badge/build-passing-brightgreen?style=for-the-badge)
